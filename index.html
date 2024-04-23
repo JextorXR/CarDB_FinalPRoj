@@ -15,7 +15,7 @@
         <img src="images/road-2-wide.jpg" alt="car">
     </div>
     <div>
-    <h1>Car DB </h1>
+    <h1>The Mini Car DB </h1>
     </div>
    
 </header>
@@ -33,18 +33,20 @@
             <select name="car-model-trims" id="car-model-trims"></select>
             </div>
             <!-- <button id="cq-show-data">Car Data</button> -->
+            <div class="car-container">
             <img src="images/2000_dodge_viper-rt10_2000_dodge_viper-rt10.webp" alt="">
-            <button id='viper-button'>Viper</button>
+            <button id='viper-button'>2000 Viper Details</button>
             <img src="images/NSX-200.webp" alt="Yellow Acura NSX Sports Car">
-            <button id='nsx-button'>NSX Detail</button>
+            <button id='nsx-button'>2000 NSX Details</button>
             <img src="images/2012 Carrera.jpg" alt="Red Prosche 911 Carrera drving down a road">
-            <button id='porsche-button'>Porsche Detail</button>
+            <button id='porsche-button'>2012 Porsche Details</button>
             </div>
+
             <div id="car-years"></div>
             <div id="car-makes"></div>
             <div id="car-models"></div>
             <div id="car-model-trims"></div>
-            
+        </div>
         </div>
         <div id="car">
             <div id="car-model-data"></div>
@@ -59,7 +61,6 @@
             
             <script type="text/javascript">
                 $(document).ready(
-                
                 function() {
                     // Code goes here
                 
@@ -68,19 +69,21 @@
                      var carquery = new CarQuery();
 
                      carquery.init();
+
                     $('#viper-button').click(function() {
+                        $('#car-model-data').html('');
                         carquery.initYearMakeModelTrim('car-years', 'car-makes', 'car-models', 'car-model-trims');
                         carquery.init('2000', 'dodge', 'Viper', 11636);
                         carquery.populateCarData('car-model-data');
                     });
                     
-                     carquery.init();
+                
                     $('#nsx-button').click(function() {
                         carquery.initYearMakeModelTrim('car-years', 'car-makes', 'car-models', 'car-model-trims');
                         carquery.init('2000', 'acura', 'NSX');
                         carquery.populateCarData('car-model-data');
                     });
-
+            
                     $('#porsche-button').click(function() {
                         carquery.initYearMakeModelTrim('car-years', 'car-makes', 'car-models', 'car-model-trims');
                         carquery.init('2012', 'porsche', '911');

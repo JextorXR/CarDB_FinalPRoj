@@ -9,21 +9,23 @@
 
 .banner {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 50px;
+    font-size: 25px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-h1{
-    margin: -10px;
+.banner h1{
+    display: block;
+    margin:5px
 }
 
 .banner img {
-    width: 100%;
-    height: 50%;
+    width: auto;
+    height: 300px;
+    border-radius: 25px;
     object-fit: cover;
 }
 
@@ -59,17 +61,23 @@ body {
  
 .search {
     animation: fadeIn 2s;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
     flex-grow: 1;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
     background-color: burlywood;
     border-radius: 25px;
 }
 
+.search h2 {
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
 
 .search .make-list {
@@ -80,13 +88,21 @@ body {
     margin: 20px;
 }
 
-.search img {
+.search .car-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 20%;
-    object-fit: cover;
+    flex-wrap: nowrap;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 25px;
+    }
+
+.search .car-container img {
+    margin: 25px;
+    height: 100px;
+    width: auto;
     border-radius: 25px;
 }
 
@@ -100,7 +116,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin: 10px;
     background-color: burlywood;
     border-radius: 25px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -120,12 +136,16 @@ body {
 .model-data
 {
    
-    font-size: 30px;
+    font-size: 18px;
 }
 
 .model-data.first-row > tbody > tr {
     color: #f2f2f2;
     
+}
+
+.car-container button {
+    height: 40px;
 }
 
 button:hover {
